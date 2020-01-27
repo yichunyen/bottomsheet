@@ -34,23 +34,13 @@ class MainActivity : AppCompatActivity() {
     private fun initBottomBehavior() {
         // CoordinatorLayout layout
         sheetBehavior = BottomSheetBehavior.from(llBottomSheet)
-        sheetBehavior!!.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-            override fun onSlide(p0: View, p1: Float) {
-
-            }
-
-            override fun onStateChanged(p0: View, p1: Int) {
-            }
-
-        })
+        sheetBehavior!!.peekHeight = 0
     }
 
     private fun displayDefaultBottomSheet() {
         if (sheetBehavior!!.state != BottomSheetBehavior.STATE_EXPANDED) {
-            llBottomSheet.visibility = View.VISIBLE
             sheetBehavior!!.state = BottomSheetBehavior.STATE_EXPANDED
         } else {
-            llBottomSheet.visibility = View.GONE
             sheetBehavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }
