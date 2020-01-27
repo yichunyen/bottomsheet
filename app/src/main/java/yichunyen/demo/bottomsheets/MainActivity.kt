@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private var sheetBehavior: BottomSheetBehavior<View>? = null
+    private fun getSheetBehavior(): BottomSheetBehavior<View> = sheetBehavior!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,14 +36,15 @@ class MainActivity : AppCompatActivity() {
     private fun initBottomBehavior() {
         // CoordinatorLayout layout
         sheetBehavior = BottomSheetBehavior.from(llBottomSheet)
-        sheetBehavior!!.peekHeight = 0
+        getSheetBehavior().peekHeight = 0
     }
 
     private fun displayDefaultBottomSheet() {
-        if (sheetBehavior!!.state != BottomSheetBehavior.STATE_EXPANDED) {
-            sheetBehavior!!.state = BottomSheetBehavior.STATE_EXPANDED
+        if (getSheetBehavior().state != BottomSheetBehavior.STATE_EXPANDED) {
+            getSheetBehavior().state = BottomSheetBehavior.STATE_EXPANDED
         } else {
-            sheetBehavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
+            getSheetBehavior().state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }
+
 }
