@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_default"
+        android:title="@string/bottom_sheet_default"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_dialog"
+        android:title="@string/bottom_sheet_dialog"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_fragment"
+        android:title="@string/bottom_sheet_fragment"
+        app:showAsAction="never" />
+</menu>
