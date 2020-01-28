@@ -6,7 +6,9 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     private var sheetBehavior: BottomSheetBehavior<View>? = null
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
                 displayDefaultBottomSheet()
                 true
             }
+            R.id.menu_dialog -> {
+                displayDialogBottomSheet()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -45,6 +51,14 @@ class MainActivity : AppCompatActivity() {
         } else {
             getSheetBehavior().state = BottomSheetBehavior.STATE_COLLAPSED
         }
+    }
+
+    private fun displayDialogBottomSheet() {
+        // Cannot the setup the peek height of dialog bottom sheet.
+        val dialogView = layoutInflater.inflate(R.layout.layout_bottom_sheet, null)
+        val dialog = BottomSheetDialog(this)
+        dialog.setContentView(dialogView)
+        dialog.show()
     }
 
 }
