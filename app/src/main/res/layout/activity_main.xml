@@ -1,31 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <include
         android:id="@+id/llBottomSheet"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_bottom_sheet_peek_height"
-        android:background="@android:color/darker_gray"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:padding="@dimen/padding"
-        app:behavior_hideable="true"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        layout="@layout/layout_bottom_sheet"
         tools:showIn="@layout/activity_main"
-        tools:visibility="visible">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"
-            android:text="@string/bottom_sheet_default"
-            android:textColor="@android:color/white" />
-
-    </LinearLayout>
+        tools:visibility="visible" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
