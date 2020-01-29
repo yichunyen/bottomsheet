@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
@@ -67,6 +68,8 @@ class MainActivity : AppCompatActivity() {
         // Cannot the setup the peek height of dialog bottom sheet.
         val dialogView = layoutInflater.inflate(R.layout.layout_bottom_sheet, null)
         val dialog = BottomSheetDialog(this)
+        val recyclerView = dialogView.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.adapter = DefaultAdapter(3)
         dialog.setContentView(dialogView)
         dialog.show()
     }
