@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
                 displayDialogBottomSheet()
                 true
             }
+            R.id.menu_fragment -> {
+                showBottomSheetFragment()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -59,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         val dialog = BottomSheetDialog(this)
         dialog.setContentView(dialogView)
         dialog.show()
+    }
+
+    private fun showBottomSheetFragment() {
+        val bottomSheetFragment = BottomSheetFragment.newInstance()
+        bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
     }
 
 }
