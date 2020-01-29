@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_bottom_sheet.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initBottomBehavior()
+        initAdapter()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity() {
         // CoordinatorLayout layout
         sheetBehavior = BottomSheetBehavior.from(llBottomSheet)
         getSheetBehavior().peekHeight = 0
+    }
+
+    private fun initAdapter() {
+        recyclerView.adapter = DefaultAdapter(3)
     }
 
     private fun displayDefaultBottomSheet() {
